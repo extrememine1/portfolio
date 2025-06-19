@@ -58,6 +58,22 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   box-shadow: 0 0 10px white, 0 0 20px deepskyblue;
   position: relative;
   overflow: visible;
+  animation: pulseGlow 6s linear infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px #ffffff, 0 0 20px deepskyblue;
+  }
+  33% {
+    box-shadow: 0 0 20px cyan, 0 0 40px #ba38ff;
+  }
+  66% {
+    box-shadow: 0 0 20px #ba38ff, 0 0 40px #0fff53;
+  }
+  100% {
+    box-shadow: 0 0 10px #ffffff, 0 0 20px deepskyblue;
+  }
 }
 
 .title {
