@@ -1,3 +1,15 @@
+document.body.style.overflow = 'hidden';
+
+// main menu
+const overlay = document.getElementById('startOverlay');
+const audioElement = document.getElementById('backgroundAudio')
+
+overlay.addEventListener('click', () => {
+  overlay.style.display = 'none';
+  document.body.style.overflow = '';
+  audioElement.play();
+});
+
 /* Typewriter - Credits to Cheng Hsuan*/
 const words = [
   "Macro Developer",
@@ -29,7 +41,7 @@ function typeLoop() {
     if (!isDeleting) {
       wordIndex = (wordIndex + 1) % words.length;
     }
-    setTimeout(typeLoop, 1000);
+    setTimeout(typeLoop, 700);
   }
 }
 
