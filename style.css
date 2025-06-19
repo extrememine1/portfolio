@@ -1,0 +1,144 @@
+body {
+  font-family: system-ui;
+  color: #0d0d0d;
+  background-color: #0d0d0d;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
+  background-attachment: fixed;
+}
+
+.frame {
+  background: #202020;
+  background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 85%
+    ),
+    /* top gradient */
+      linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    /* horizontal grid */
+      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px); /* vertical grid */
+
+  background-size: auto, 40px 40px, 40px 40px; /* match grid spacing */
+  background-repeat: repeat;
+  opacity: 1;
+  border: 1px solid #4f4e4e;
+  border-radius: 12px;
+  padding: 0vw 20px;
+  z-index: 1;
+  margin: 12.5vw 25vw;
+  box-shadow: 0 0 10px white, 0 0 20px deepskyblue;
+  position: relative;
+  overflow: visible;
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px white, 0 0 20px cyan;
+  }
+  25% {
+    box-shadow: 0 0 10px cyan, 0 0 20px #BA38FF;
+  }
+  50% {
+    box-shadow: 0 0 10px #BA38FF, 0 0 20px #0FFF53;
+  }
+  75% {
+    box-shadow: 0 0 10px #0FFF53, 0 0 20px #BA38FF;
+  }
+  100% {
+    box-shadow: 0 0 10px cyan, 0 0 20px white;
+  }
+}
+
+.title {
+  color: white;
+  text-align: left;
+  z-index: 2;
+  padding: 0vw 1vw;
+  font-size: 4rem; /* increase this value to make text bigger */
+  font-weight: bold;
+}
+
+.description {
+  color: #c4c5c4;
+  text-align: left;
+  z-index: 2;
+  margin: 1.5vw 1vw;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.cursor {
+  color: white;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.portfolio-button {
+  position: relative;
+  overflow: hidden; /* required for clipping the ::before effect */
+  text-decoration: none;
+  color: white;
+  background: #000000;
+  font-size: 1.5rem;
+  z-index: 2;
+  padding: 12px 20px;
+  margin: 1vw 0.5vw;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* gradient overlay that slides in on hover */
+.portfolio-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200%; /* enough width to slide from left */
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 25%,
+    rgba(126, 126, 126, 1)
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  z-index: -1;
+}
+
+/* slide in effect */
+.portfolio-button:hover::before {
+  transform: translateX(0);
+}
+
+/* keep text above overlay */
+.portfolio-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+}
+
+.portfolio-button .arrow {
+  display: inline-block;
+  margin-left: 8px; /* space between text and arrow */
+  transition: transform 0.3s ease;
+}
+
+/* On hover, slide the arrow 5px to the right */
+.portfolio-button:hover .arrow {
+  transform: translateX(15px);
+}
