@@ -2,7 +2,7 @@ document.body.style.overflow = 'hidden';
 
 // main menu
 const overlay = document.getElementById('startOverlay');
-const audioElement = document.getElementById('backgroundAudio')
+const audioElement = document.getElementById('backgroundAudio');
 
 overlay.addEventListener('click', () => {
   overlay.style.display = 'none';
