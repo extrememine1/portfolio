@@ -2,7 +2,10 @@ window.addEventListener('DOMContentLoaded', () => {
   document.body.style.overflow = 'hidden';
 
   const overlay = document.getElementById('startOverlay');
+  
   const audioElement = document.getElementById('backgroundAudio');
+  audioElement.loop = true;
+  audioElement.volume = 0.6;
 
   overlay.addEventListener('click', () => {
     overlay.style.display = 'none';
