@@ -1,9 +1,36 @@
+#startOverlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);  /* make it semi-transparent so blur shows */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 9999;
+  user-select: none;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.overlay-text {
+  padding: 20px 40px;
+  border-radius: 12px;
+  font-family: system-ui;
+  color: #c4c5c4;
+}
+
 body {
   font-family: system-ui;
   color: #0d0d0d;
   background-color: #0d0d0d;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   background-attachment: fixed;
 }
 
@@ -26,29 +53,11 @@ body {
   border-radius: 12px;
   padding: 0vw 20px;
   z-index: 1;
-  margin: 12.5vw 25vw;
+  margin: 12.5vw auto;
+  max-width: 1000px;
   box-shadow: 0 0 10px white, 0 0 20px deepskyblue;
   position: relative;
   overflow: visible;
-  animation: pulseGlow 5s ease-in-out infinite;
-}
-
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 10px white, 0 0 20px cyan;
-  }
-  25% {
-    box-shadow: 0 0 10px cyan, 0 0 20px #BA38FF;
-  }
-  50% {
-    box-shadow: 0 0 10px #BA38FF, 0 0 20px #0FFF53;
-  }
-  75% {
-    box-shadow: 0 0 10px #0FFF53, 0 0 20px #BA38FF;
-  }
-  100% {
-    box-shadow: 0 0 10px cyan, 0 0 20px white;
-  }
 }
 
 .title {
@@ -58,6 +67,7 @@ body {
   padding: 0vw 1vw;
   font-size: 4rem; /* increase this value to make text bigger */
   font-weight: bold;
+  line-height: 0.5;
 }
 
 .description {
