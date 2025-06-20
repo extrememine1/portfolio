@@ -201,8 +201,12 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
 
 @media (max-width: 600px) {
   .frame {
-    margin: 5vw 5vw;      /* smaller margins on mobile */
-    padding: 10px 10px;   /* adjust padding */
+    margin: 5vw 5vw;
+    padding: 10px 15px;
+    width: auto;
+    max-width: 90vw;
+    display: block;
+    box-sizing: border-box;
   }
 
   .title {
