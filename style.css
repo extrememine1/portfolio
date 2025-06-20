@@ -68,7 +68,6 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   z-index: 1;
   margin: 12.5vw auto;
   max-width: 65vw;
-  max-height: 20vw;
   top: 5vh;
   box-shadow: 0 0 10px white, 0 0 20px deepskyblue;
   position: relative;
@@ -209,6 +208,7 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   .title {
     font-size: 2rem;      /* smaller text */
     padding: 0 5px;
+    line-height: 1.4;
   }
 
   .description {
