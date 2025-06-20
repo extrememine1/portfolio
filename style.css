@@ -22,6 +22,17 @@
   border-radius: 12px;
   font-family: system-ui;
   color: #c4c5c4;
+  animation: fadeInOut 5s ease infinite
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 body {
@@ -31,6 +42,8 @@ body {
   background-image: 
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
 }
 
@@ -54,7 +67,8 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   padding: 0vw 20px;
   z-index: 1;
   margin: 12.5vw auto;
-  max-width: 1000px;
+  max-width: 65vw;
+  max-height: 20vw;
   box-shadow: 0 0 10px white, 0 0 20px deepskyblue;
   position: relative;
   overflow: visible;
@@ -81,7 +95,7 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   text-align: left;
   z-index: 2;
   padding: 0vw 1vw;
-  font-size: 4rem; /* increase this value to make text bigger */
+  font-size: 3vw; /* increase this value to make text bigger */
   font-weight: bold;
   line-height: 0.5;
 }
@@ -91,7 +105,7 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   text-align: left;
   z-index: 2;
   margin: 1.5vw 1vw;
-  font-size: 2rem;
+  font-size: 1.5vw;
   font-weight: 400;
 }
 
@@ -116,7 +130,7 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   text-decoration: none;
   color: white;
   background: #000000;
-  font-size: 1.5rem;
+  font-size: 1.25vw;
   z-index: 2;
   padding: 12px 20px;
   margin: 1vw 0.5vw;
