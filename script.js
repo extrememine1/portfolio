@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
   document.body.style.overflow = 'hidden';
-
+  
   const overlay = document.getElementById('startOverlay');
   
   const audioElement = document.getElementById('backgroundAudio');
@@ -12,7 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
     audioElement.play();
   });
-
+  
+  // typewriter credit to cheng
   const words = [
     "Macro Developer",
     "UI/UX Designer",
