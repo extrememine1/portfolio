@@ -199,7 +199,7 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
 
 /* mobile support */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .frame {
     margin: 5vw 5vw;
     padding: 10px 15px;
@@ -217,13 +217,12 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   
   .highlight {
     display: block;  /* moves span to its own line */
-    margin-top: 0.5rem; /* optional spacing */
   }
 
   .description {
     font-size: 1rem;      /* smaller description text */
     margin: 1rem 0;
-    padding-left: 10px;
+    padding-left: 5px;
   }
 
   .portfolio-button {
