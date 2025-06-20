@@ -69,6 +69,7 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   margin: 12.5vw auto;
   max-width: 65vw;
   max-height: 20vw;
+  top: 5vh;
   box-shadow: 0 0 10px white, 0 0 20px deepskyblue;
   position: relative;
   overflow: visible;
