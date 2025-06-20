@@ -3,7 +3,7 @@
   top: 0; left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.4);  /* make it semi-transparent so blur shows */
+  background-color: rgba(0,0,0,0.4);
   color: white;
   display: flex;
   justify-content: center;
@@ -102,6 +102,7 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
 
 .highlight {
   background: linear-gradient(to right, #ba38ff, #0fff53, cyan);
+  font-size: 4vw;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: text-shadow 0.3s ease;
@@ -199,7 +200,7 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
 
 /* mobile support */
 
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
   .frame {
     margin: 5vw 5vw;
     padding: 10px 15px;
@@ -207,27 +208,30 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
     max-width: 90vw;
     display: block;
     box-sizing: border-box;
+    top: 25vw
   }
 
   .title {
     font-size: 2rem;      /* smaller text */
-    padding: 0 5px;
+    padding: 0 50px;
     line-height: 1.4;
   }
   
   .highlight {
-    display: block;  /* moves span to its own line */
+    display: block;
+    font-size: 3rem; /* moves span to its own line */
   }
 
   .description {
-    font-size: 1rem;      /* smaller description text */
+    font-size: 1.25rem;      /* smaller description text */
     margin: 1rem 0;
-    padding-left: 5px;
+    padding-left: 55px;
   }
 
   .portfolio-button {
     font-size: 1rem;
-    padding: 10px 15px;
-    margin: 10px 0;
+    padding: 10px 10px;
+    padding-bottom: 10px;
+    margin: 20px 50px;
   }
 }
