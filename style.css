@@ -100,6 +100,20 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   line-height: 0.5;
 }
 
+.highlight {
+  background: linear-gradient(to right, #ba38ff, #0fff53, cyan);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: text-shadow 0.3s ease;
+}
+
+.highlight:hover {
+  text-shadow:
+    0 0 8px rgba(186, 56, 255, 0.3),
+    0 0 12px rgba(15, 255, 83, 0.3),
+    0 0 16px rgba(0, 255, 255, 0.3);
+}
+
 .description {
   color: #c4c5c4;
   text-align: left;
@@ -181,4 +195,29 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
 /* On hover, slide the arrow 5px to the right */
 .portfolio-button:hover .arrow {
   transform: translateX(15px);
+}
+
+/* mobile support */
+
+@media (max-width: 600px) {
+  .frame {
+    margin: 5vw 5vw;      /* smaller margins on mobile */
+    padding: 10px 10px;   /* adjust padding */
+  }
+
+  .title {
+    font-size: 2rem;      /* smaller text */
+    padding: 0 5px;
+  }
+
+  .description {
+    font-size: 1rem;      /* smaller description text */
+    margin: 1rem 0;
+  }
+
+  .portfolio-button {
+    font-size: 1rem;
+    padding: 10px 15px;
+    margin: 10px 0;
+  }
 }
