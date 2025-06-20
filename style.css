@@ -213,25 +213,26 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
 
   .title {
     font-size: 2rem;      /* smaller text */
-    padding: 0 50px;
+    padding: 0 25px;
     line-height: 1.4;
   }
   
   .highlight {
     display: block;
-    font-size: 3rem; /* moves span to its own line */
+    font-size: 2.5rem; /* moves span to its own line */
   }
 
   .description {
     font-size: 1.25rem;      /* smaller description text */
     margin: 1rem 0;
-    padding-left: 55px;
+    padding-left: 30px;
   }
 
   .portfolio-button {
     font-size: 1rem;
     padding: 10px 10px;
     padding-bottom: 10px;
-    margin: 20px 50px;
+    margin: 20px 25px;
   }
 }
+
