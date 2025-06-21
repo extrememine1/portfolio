@@ -1,18 +1,40 @@
-window.addEventListener('scroll', () => {
-  const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 50) {
-    navbar.classList.add('shrink');
-  } else {
-    navbar.classList.remove('shrink');
-  }
-});
-
 window.addEventListener('DOMContentLoaded', () => {
   document.body.style.overflow = 'hidden';
-  
-  // snow
+
+  // Blurring logic with ResizeObserver
+  const navbar = document.querySelector('.navbar');
+  const blurOverlay = document.querySelector('#blurOverlay');
+  const startSection = document.querySelector('#start');
+
+  // Function to check scroll and apply blur
+  const checkScroll = () => {
+    // Shrink navbar when scrolled down
+    if (window.scrollY > 50) {
+      navbar.classList.add('shrink');
+    } else {
+      navbar.classList.remove('shrink');
+    }
+
+    // Check if start section is within 10vh from the top
+    const rect = startSection.getBoundingClientRect();
+    const tenVh = window.innerHeight * 0.2; // 10vh in pixels
+    if (rect.bottom <= tenVh) {
+      blurOverlay.classList.add('blur');
+    } else {
+      blurOverlay.classList.remove('blur');
+    }
+  };
+
+  // Observe viewport resizes (better than window.resize)
+  const resizeObserver = new ResizeObserver(checkScroll);
+  resizeObserver.observe(document.documentElement); // Watch the entire viewport
+
+  // Also run on initial scroll
+  window.addEventListener('scroll', checkScroll);
+
+  // Rest of your code (snow, audio, typewriter) remains unchanged...
   const snowContainer = document.getElementById('snow-container');
-  const totalSnowflakes = 200;
+  const totalSnowflakes = 100;
 
   for (let i = 0; i < totalSnowflakes; i++) {
     const snowflake = document.createElement('div');
@@ -22,7 +44,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const delay = Math.random() * 10;
     const duration = Math.random() * 10 + 10;
     const opacity = Math.random();
-    const offsetY = Math.random() * 100 + 20; // Random start height above screen
+    const offsetY = Math.random() * 100 + 20;
 
     snowflake.style.left = `${Math.random() * 100}vw`;
     snowflake.style.top = `-${offsetY}px`;
@@ -35,26 +57,23 @@ window.addEventListener('DOMContentLoaded', () => {
     snowContainer.appendChild(snowflake);
   }
 
-  
-  // audio
+  // Audio and overlay logic
   const overlay = document.getElementById('startOverlay');
-  
   const audioElement = document.getElementById('backgroundAudio');
   audioElement.loop = true;
   audioElement.volume = 0.6;
 
   overlay.addEventListener('click', () => {
-    overlay.classList.add('fade-out');  // start fading out
+    overlay.classList.add('fade-out');
     document.body.style.overflow = '';
 
-  // Wait for the transition to finish (600ms here)
     setTimeout(() => {
-      overlay.style.display = 'none';   // hide after fade out
-  }, 600);
+      overlay.style.display = 'none';
+    }, 600);
     audioElement.play();
   });
-  
-  // typewriter credit to cheng
+
+  // Typewriter effect
   const words = [
     "Macro Developer",
     "UI/UX Designer",
@@ -88,6 +107,5 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Start the typewriter effect
   typeLoop();
 });
