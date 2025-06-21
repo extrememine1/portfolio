@@ -12,18 +12,24 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 section {
-  width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem;
+  padding-top: 100px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  padding-top: 100px;
-  box-sizing: border-box;
 }
 
 #startOverlay {
