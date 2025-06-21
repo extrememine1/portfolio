@@ -7,11 +7,23 @@ body {
   color: #0d0d0d;
   background-color: #0d0d0d;
   background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
 url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+section {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  padding-top: 100px;
+  box-sizing: border-box;
 }
 
 #startOverlay {
@@ -57,6 +69,24 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   }
 }
 
+#blurOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;     /* full viewport width */
+  height: 100vh;
+  z-index: -1;
+  
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: backdrop-filter ease 0.3s, -webkit-backdrop-filter ease 0.3s;
+}
+
+#blurOverlay.blur {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
 #snow-container {
   position: fixed;
   top: 0;
@@ -74,7 +104,6 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   height: 10px;
   background: white;
   border-radius: 50%;
-  opacity: 0.8;
   animation-name: fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -85,8 +114,14 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   0% {
     transform: translateY(-100px);
   }
+  95% {
+    opacity: opacity;
+    box-shadow: 0 0 20px white;
+  }
   100% {
     transform: translateY(110vh);
+    opacity: 0;
+    box-shadow: 0 0 0px white;
   }
 }
 
@@ -129,20 +164,24 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
 
 .nav-links li a {
   text-decoration: none;
-  color: rgba(230, 230, 230, 0.8);
+  color: rgba(230, 230, 230, 0.9);
   font-weight: bold;
   font-size: 1rem;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease, font-size 0.3s ease;
 }
 
 .nav-links li a:hover {
   text-shadow: 
-    0 0 8px rgba(186, 56, 255, 0.5),
-    0 0 12px rgba(15, 255, 83, 0.5),
-    0 0 16px rgba(0, 255, 255, 0.5);
+    0 0 10px white;
+  font-size: 1.1rem
 }
 
-.frame {
+.nav-links li a:active {
+  font-size: 1rem;
+  transition: font-size 0.1s ease
+}
+
+.start-frame {
   background: #202020;
   background-image: linear-gradient(
       90deg,
@@ -160,10 +199,9 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   border: 1px solid #4f4e4e;
   border-radius: 12px;
   padding: 0vw 20px;
-  z-index: 1;
+  z-index: 2;
   margin: 12.5vw auto;
   max-width: 50vw;
-  top: 5vh;
   box-shadow: 0 0 10px white, 0 0 20px deepskyblue;
   position: relative;
   overflow: visible;
@@ -185,14 +223,43 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
   }
 }
 
+.frame {
+  display: block;
+  background: rgba(35, 35, 35);
+  opacity: 0.8;
+  border: 1px solid rgba(40, 40, 40);
+  border-radius: 12px;
+  padding: 0vw 20px;
+  margin-bottom: 2vw;
+  text-align: left;
+  width: 40vw;
+  color: white;
+  box-shadow: 0 0 4px rgba(40, 40, 40);
+  
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  transition: border ease 0.3s, box-shadow ease 0.3s
+}
+
+.frame:hover {
+  border: 1px solid rgba(80, 80, 80);
+  box-shadow: 0 0 8px rgba(80, 80, 80);
+}
+
 .title {
   color: white;
   text-align: left;
   z-index: 2;
   padding: 0vw 1vw;
-  font-size: 3vw; /* increase this value to make text bigger */
+  font-size: 3vw;
   font-weight: bold;
   line-height: 0.5;
+  display: block
+}
+
+.frame-title {
+  font-size: 2rem;
 }
 
 .name-highlight {
@@ -210,13 +277,32 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
     0 0 16px rgba(0, 255, 255, 0.3);
 }
 
-.description {
+.highlight {
+  background: linear-gradient(45deg, #01F2FF, #01AEFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: text-shadow 0.3s ease;
+}
+
+.highlight:hover {
+  text-shadow:
+    0 0 8px rgba(1, 242, 255, 0.3),
+    0 0 16px rgba(1, 174, 255, 0.3)
+}
+
+.start-description {
   color: #c4c5c4;
   text-align: left;
   z-index: 2;
   margin: 1.5vw 1vw;
   font-size: 1.5vw;
   font-weight: 400;
+}
+
+.description {
+  z-index: 2;
+  font-size: 1.5rem;
+  font-weight: 300;
 }
 
 .cursor {
@@ -294,20 +380,10 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
 }
 
 /* mobile support */
-@media (max-width: 1100px) {
-  .frame {
-    margin: 5vw 5vw;
-    padding: 10px 15px;
-    width: auto;
-    max-width: 90vw;
-    display: block;
-    box-sizing: border-box;
-    top: 25vw
-  }
-
+@media (max-width: 1500px) {
   .title {
     font-size: 2rem;      /* smaller text */
-    padding: 0 50px;
+    padding: 0 25px;
     line-height: 1.4;
   }
   
@@ -316,16 +392,16 @@ url("https://github.com/extrememine1/dataAPI/blob/main/mcaurora.png?raw=true");
     font-size: 3rem; /* moves span to its own line */
   }
 
-  .description {
+  .start-description {
     font-size: 1.25rem;      /* smaller description text */
     margin: 1rem 0;
-    padding-left: 55px;
+    padding-left: 30px;
   }
-
+  
   .portfolio-button {
     font-size: 1rem;
     padding: 10px 10px;
     padding-bottom: 10px;
-    margin: 20px 50px;
+    margin: 20px 25px;
   }
 }
