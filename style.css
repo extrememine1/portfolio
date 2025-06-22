@@ -224,7 +224,8 @@ section {
   padding: 0vw 20px;
   z-index: 2;
   margin: 12.5vw auto;
-  max-width: 50vw;
+  height: auto;
+  width: 50vw;
   box-shadow: 0 0 10px white, 0 0 20px deepskyblue;
   position: relative;
   overflow: visible;
@@ -246,7 +247,7 @@ section {
   padding: 20px 40px;
   margin-bottom: 2vw;
   text-align: left;
-  width: 40vw;
+  width: 70vw;
   color: white;
   box-shadow: 0 0 4px rgba(40, 40, 40);
   backdrop-filter: blur(12px);
