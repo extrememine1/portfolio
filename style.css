@@ -246,18 +246,45 @@ section {
   border-radius: 12px;
   padding: 20px 40px;
   margin-bottom: 2vw;
+  width: auto;
   text-align: left;
-  width: 70vw;
   color: white;
   box-shadow: 0 0 4px rgba(40, 40, 40);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: border ease 0.3s, box-shadow ease 0.3s;
+  z-index: 2;
+}
+
+.main-frame {
+  width: 50vw
+}
+
+.project-frame {
+  width: 25vw;
 }
 
 .frame:hover {
   border: 1px solid rgba(80, 80, 80);
   box-shadow: 0 0 8px rgba(80, 80, 80);
+}
+
+#main-project-frame {
+  display: flex;
+  height: auto;
+  width: 100%;
+  flex-direction: row;
+  gap: 0vw 5vw;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.line {
+  width: auto;
+  height: 2px;
+  background-color: rgba(80, 80, 80);
+  margin: 2rem 0;
 }
 
 .title {
@@ -273,6 +300,10 @@ section {
 
 .frame-title {
   font-size: 2rem;
+}
+
+.project-title {
+  font-size: 1.5rem
 }
 
 .name-highlight {
@@ -304,7 +335,7 @@ section {
 }
 
 .start-description {
-  color: #c4c5c4;
+  color: white;
   text-align: left;
   z-index: 2;
   margin: 1.5vw 1vw;
@@ -316,6 +347,10 @@ section {
   z-index: 2;
   font-size: 1.5rem;
   font-weight: 300;
+}
+
+.project-description {
+  font-size: 1.25rem
 }
 
 .cursor {
@@ -345,6 +380,12 @@ section {
   border: none;
   cursor: pointer;
   transition: color 0.3s ease;
+}
+
+.small-button {
+  font-size: 1.1rem;
+  padding: 12px 12px;
+  margin: 0rem 0;
 }
 
 .portfolio-button::before {
@@ -422,5 +463,14 @@ section {
 
   .nav-links li a:active {
     font-size: 1rem;
+  }
+  
+  #main-project-frame {
+    flex-direction: column;
+    gap: 2rem; /* smaller vertical gap */
+  }
+
+  .project-frame {
+    width: auto; /* expand to fit mobile screen */
   }
 }
