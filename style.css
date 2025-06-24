@@ -509,7 +509,7 @@ section {
   }
 
   .project-frame {
-    max-width: 95vw; /* expand to fit mobile screen */
+    width: 70vw;
   }
 }
 
